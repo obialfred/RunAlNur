@@ -1,0 +1,1041 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Agentic UI Design System */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  
+  /* Sidebar */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  
+  /* Charts - Monochrome */
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  
+  /* Core */
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  
+  /* Radius - Sharp corners */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-2xl: 10px;
+  --radius-3xl: 12px;
+  --radius-4xl: 14px;
+  
+  /* Agentic Status Colors */
+  --color-live: var(--live);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-success: var(--success);
+}
+
+/* 
+ * AGENTIC UI COLOR SYSTEM
+ * Stark, monochrome, precise
+ * Light mode is the default - command centers are well-lit
+ */
+:root {
+  --radius: 4px;
+
+  /* Safe-area + viewport sizing (PWA/mobile) */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+  --vh: 1vh;
+  --app-height: 100dvh;
+  
+  /* Near-white background - surgical precision */
+  --background: #FAFAFA;
+  --foreground: #0A0A0A;
+  
+  /* Cards - Pure white on off-white background */
+  --card: #FFFFFF;
+  --card-foreground: #0A0A0A;
+  
+  /* Popover */
+  --popover: #FFFFFF;
+  --popover-foreground: #0A0A0A;
+  
+  /* Primary - Pure black */
+  --primary: #0A0A0A;
+  --primary-foreground: #FAFAFA;
+  
+  /* Secondary - Light gray */
+  --secondary: #F4F4F5;
+  --secondary-foreground: #18181B;
+  
+  /* Muted - Subtle gray */
+  --muted: #F4F4F5;
+  --muted-foreground: #71717A;
+  
+  /* Accent - Slightly darker gray for hover states */
+  --accent: #E4E4E7;
+  --accent-foreground: #18181B;
+  
+  /* Destructive */
+  --destructive: #EF4444;
+  
+  /* Borders - Subtle, precise */
+  --border: #E4E4E7;
+  --input: #E4E4E7;
+  --ring: #18181B;
+  
+  /* Charts - Grayscale */
+  --chart-1: #18181B;
+  --chart-2: #3F3F46;
+  --chart-3: #71717A;
+  --chart-4: #A1A1AA;
+  --chart-5: #D4D4D8;
+  
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0A0A0A;
+  --sidebar-primary: #0A0A0A;
+  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar-accent: #F4F4F5;
+  --sidebar-accent-foreground: #18181B;
+  --sidebar-border: #E4E4E7;
+  --sidebar-ring: #18181B;
+  
+  /* Agentic Status Colors - Used sparingly */
+  --live: #22C55E;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  
+  /* Shadows - Theme-aware */
+  --shadow-color: 0 0 0;
+  --shadow-elevation-low: 0 1px 2px rgba(var(--shadow-color), 0.1);
+  --shadow-elevation-medium: 0 4px 16px -4px rgba(var(--shadow-color), 0.15);
+  --shadow-elevation-high: 0 12px 40px -12px rgba(var(--shadow-color), 0.2);
+  --shadow-hover: 0 20px 40px -15px rgba(var(--shadow-color), 0.2);
+}
+
+/* Dark mode - Optional, but keeping structure */
+.dark {
+  --background: #09090B;
+  --foreground: #FAFAFA;
+  
+  --card: #18181B;
+  --card-foreground: #FAFAFA;
+  
+  --popover: #18181B;
+  --popover-foreground: #FAFAFA;
+  
+  --primary: #FAFAFA;
+  --primary-foreground: #18181B;
+  
+  --secondary: #27272A;
+  --secondary-foreground: #FAFAFA;
+  
+  --muted: #27272A;
+  --muted-foreground: #A1A1AA;
+  
+  --accent: #27272A;
+  --accent-foreground: #FAFAFA;
+  
+  --destructive: #EF4444;
+  
+  --border: #27272A;
+  --input: #27272A;
+  --ring: #D4D4D8;
+  
+  --chart-1: #FAFAFA;
+  --chart-2: #D4D4D8;
+  --chart-3: #A1A1AA;
+  --chart-4: #71717A;
+  --chart-5: #3F3F46;
+  
+  --sidebar: #18181B;
+  --sidebar-foreground: #FAFAFA;
+  --sidebar-primary: #FAFAFA;
+  --sidebar-primary-foreground: #18181B;
+  --sidebar-accent: #27272A;
+  --sidebar-accent-foreground: #FAFAFA;
+  --sidebar-border: #27272A;
+  --sidebar-ring: #D4D4D8;
+  
+  /* Shadows - Dark mode uses darker shadows for depth */
+  --shadow-color: 0 0 0;
+  --shadow-elevation-low: 0 1px 2px rgba(var(--shadow-color), 0.3);
+  --shadow-elevation-medium: 0 4px 16px -4px rgba(var(--shadow-color), 0.4);
+  --shadow-elevation-high: 0 12px 40px -12px rgba(var(--shadow-color), 0.5);
+  --shadow-hover: 0 20px 40px -15px rgba(var(--shadow-color), 0.5);
+}
+
+/* =============================================
+   THEME TRANSITIONS
+   Smooth color transitions when switching themes
+   ============================================= */
+
+/* Base transition for all theme-related properties */
+html {
+  transition: color-scheme 0.3s ease;
+}
+
+/* Apply transitions to key elements when theme changes */
+html:not(.disable-transitions),
+html:not(.disable-transitions) *,
+html:not(.disable-transitions) *::before,
+html:not(.disable-transitions) *::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Disable transitions on page load to prevent flash */
+html.disable-transitions,
+html.disable-transitions *,
+html.disable-transitions *::before,
+html.disable-transitions *::after {
+  transition: none !important;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html,
+  html *,
+  html *::before,
+  html *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Agentic Typography Utilities */
+.text-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.text-section {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+.text-mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+/* Agentic Metric Display */
+.metric-value {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.metric-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+/* Agentic Progress Bar */
+.progress-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--foreground);
+  transition: width 0.3s ease;
+}
+
+.progress-bar-fill.live {
+  background: var(--live);
+}
+
+/* Agentic Status Indicators */
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--muted-foreground);
+}
+
+.status-dot.live {
+  background: var(--live);
+  animation: pulse 2s infinite;
+}
+
+.status-dot.warning {
+  background: var(--warning);
+}
+
+.status-dot.error {
+  background: var(--error);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Selection */
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+/* Focus states
+   On touch devices iOS can show focus rings on tap, which looks like a random white box.
+   Keep strong focus only for pointer-fine (mouse/keyboard) environments. */
+@media (pointer: fine) {
+  :focus-visible {
+    outline: 1px solid var(--foreground);
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion safety */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Agentic Card Styles */
+.agentic-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.agentic-card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.agentic-card-content {
+  padding: 20px;
+}
+
+/* Report Card Style */
+.report-card {
+  display: grid;
+  gap: 16px;
+}
+
+.report-card-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.report-card-metric .label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.report-card-metric .value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.report-card-metric .bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.report-card-metric .bar-fill {
+  height: 100%;
+  background: var(--foreground);
+}
+
+/* Navigation Section Headers */
+.nav-section {
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Agentic Table */
+.agentic-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.agentic-table th {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.agentic-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.agentic-table tr:hover {
+  background: var(--muted);
+}
+
+/* Variant Badge */
+.variant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.variant-badge.deployed {
+  background: var(--live);
+  color: white;
+}
+
+.variant-badge.draft {
+  background: var(--border);
+  color: var(--muted-foreground);
+}
+
+/* =============================================
+   RESPONSIVE / MOBILE STYLES
+   ============================================= */
+
+/* Responsive table wrapper - horizontal scroll on mobile */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile card padding adjustments */
+@media (max-width: 767px) {
+  .agentic-card-header {
+    padding: 12px 16px;
+  }
+  
+  .agentic-card-content {
+    padding: 16px;
+  }
+  
+  .agentic-table th,
+  .agentic-table td {
+    padding: 12px;
+    font-size: 13px;
+  }
+  
+  .agentic-table th {
+    font-size: 10px;
+  }
+  
+  /* Report card metrics - 2 columns on mobile */
+  .report-card-metric .label {
+    font-size: 10px;
+  }
+  
+  .report-card-metric .value,
+  .metric-value {
+    font-size: 24px;
+  }
+}
+
+/* Touch targets: avoid globally inflating every button/link.
+   Use explicit sizing (`h-11 w-11`, `min-h-[44px]`, `.touch-target`, `.icon-only`) on key controls instead. */
+
+/* Improve touch scrolling */
+@media (pointer: coarse) {
+  .table-responsive {
+    scroll-snap-type: x proximity;
+  }
+  
+  ::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+
+/* Safe area padding for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* =============================================
+   PLATFORM-SPECIFIC STYLES (iOS, Tauri, PWA)
+   ============================================= */
+
+/* =============================================
+   MOBILE VIEWPORT HEIGHT FIX
+   Accounts for mobile browser chrome (address bar, etc.)
+   ============================================= */
+
+:root {
+  /* Safe area insets */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+  
+  /* Layout dimensions */
+  --mobile-nav-height: 56px;
+  --header-height: 56px;
+  
+  /* Dynamic viewport height - set by JS, fallback to vh */
+  --vh: 1vh;
+}
+
+/* Use dvh (dynamic viewport height) where supported */
+@supports (height: 100dvh) {
+  :root {
+    --app-height: 100dvh;
+  }
+}
+
+@supports not (height: 100dvh) {
+  :root {
+    --app-height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+/* =============================================
+   CAPACITOR / iOS SPECIFIC STYLES
+   Fixed to allow proper scrolling
+   ============================================= */
+
+html.capacitor,
+html.ios {
+  /* Prevent overscroll bounce on the html element */
+  overscroll-behavior: none;
+  height: 100%;
+  
+  /* Prevent text selection on double-tap */
+  -webkit-user-select: none;
+  user-select: none;
+  
+  /* Prevent callout on long-press */
+  -webkit-touch-callout: none;
+}
+
+html.capacitor body,
+html.ios body {
+  /* Use full height but allow children to scroll */
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior-y: contain;
+}
+
+/* Main scroll container handles scroll - NOT the body */
+html.capacitor main,
+html.ios main {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* Allow text selection in input fields */
+html.capacitor input,
+html.capacitor textarea,
+html.capacitor [contenteditable="true"],
+html.ios input,
+html.ios textarea,
+html.ios [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* =============================================
+   SAFE AREA UTILITIES
+   For notched devices and PWA mode
+   ============================================= */
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-area-left {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+
+.safe-area-right {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+.safe-area-x {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+.safe-area-y {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-area-all {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Content that sits above mobile nav - accounts for nav + safe area */
+.above-mobile-nav {
+  padding-bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0px) + 16px);
+}
+
+@media (min-width: 768px) {
+  .above-mobile-nav {
+    padding-bottom: 24px;
+  }
+}
+
+/* Mobile nav safe area wrapper */
+.mobile-nav-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Tauri window title bar overlay area */
+html.tauri .window-drag {
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+html.tauri .window-no-drag {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
+
+/* Tauri title bar padding (when using overlay) */
+html.tauri .title-bar-space {
+  padding-top: 28px;
+}
+
+/* PWA standalone mode
+   NOTE: Avoid global `body` padding/position hacks on iOS PWA.
+   Safe areas should be handled by specific sticky/fixed UI (TopBar, banners, nav). */
+@media (display-mode: standalone) {
+  html, body {
+    height: 100%;
+  }
+}
+
+/* Bottom navigation safe area for iOS */
+.bottom-nav {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+}
+
+/* Floating action button positioning */
+.fab {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+}
+
+/* iOS-style momentum scrolling */
+.momentum-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+/* Prevent rubber band effect on scroll containers */
+.no-bounce {
+  overscroll-behavior: contain;
+}
+
+/* =============================================
+   ENHANCED TOUCH STATES FOR MOBILE
+   ============================================= */
+
+@media (pointer: coarse) {
+  /* Active state feedback */
+  button:active:not(:disabled),
+  [role="button"]:active:not(:disabled),
+  a:active:not([aria-disabled="true"]) {
+    transform: scale(0.98);
+    opacity: 0.8;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+  }
+  
+  /* Touch target utility class */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Ensure buttons have good touch targets */
+  button:not(.icon-only),
+  [role="button"]:not(.icon-only) {
+    min-height: 44px;
+  }
+  
+  /* Icon-only buttons need explicit sizing */
+  .icon-only {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Horizontal scroll container for mobile */
+.mobile-scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-scroll-x::-webkit-scrollbar {
+  display: none;
+}
+
+/* Pull-to-refresh disable (when using custom implementation) */
+html.capacitor body {
+  overscroll-behavior-y: contain;
+}
+
+/* =============================================
+   MOBILE-FIRST RESPONSIVE UTILITIES
+   ============================================= */
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* =============================================
+   SHEET/DRAWER iOS SCROLL FIX
+   ============================================= */
+
+/* Radix Sheet content - ensure iOS touch scrolling works */
+[data-slot="sheet-content"] {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Ensure nested scrollable areas work in sheets */
+[data-slot="sheet-content"] [data-slot="scroll-area-viewport"],
+[data-slot="sheet-content"] .overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
+/* =============================================
+   DIALOG/MODAL MOBILE SAFE HEIGHT
+   Ensures dialogs fit within viewport with safe areas
+   ============================================= */
+
+[data-slot="dialog-content"] {
+  /* Max height with safe area consideration */
+  max-height: calc(var(--app-height, 100dvh) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 2rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Mobile-specific dialog adjustments */
+@media (max-width: 639px) {
+  [data-slot="dialog-content"] {
+    /* On mobile, use nearly full width and ensure scrolling */
+    max-width: calc(100vw - 1rem);
+    max-height: calc(var(--app-height, 100dvh) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 3rem);
+    margin: 0.5rem;
+  }
+  
+  /* Dialog close button - larger touch target on mobile */
+  [data-slot="dialog-close"] {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Mobile-specific flex gap fixes */
+@media (max-width: 767px) {
+  .mobile-gap-2 {
+    gap: 8px;
+  }
+  
+  .mobile-p-4 {
+    padding: 16px;
+  }
+}
+
+/* Ensure proper stacking for fixed elements */
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+/* =============================================
+   MOBILE-FIRST LAYOUT UTILITIES
+   For iPhone Pro Max (430x932) and similar
+   ============================================= */
+
+/* Prevent horizontal overflow on mobile */
+.mobile-contain {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Mobile-friendly grid collapse */
+@media (max-width: 767px) {
+  .mobile-stack {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Force single column on mobile for grids */
+  .mobile-cols-1 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Reduce padding on mobile */
+  .mobile-p-tight {
+    padding: 12px;
+  }
+  
+  /* Smaller gaps on mobile */
+  .mobile-gap-tight {
+    gap: 8px;
+  }
+}
+
+/* =============================================
+   CALENDAR MOBILE FIXES
+   ============================================= */
+
+@media (max-width: 767px) {
+  /* Calendar week view - ensure horizontal scroll works smoothly */
+  .calendar-week-view {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .calendar-week-view > * {
+    scroll-snap-align: start;
+  }
+  
+  /* Calendar day columns - minimum width for touch */
+  .calendar-day-column {
+    min-width: 60px;
+  }
+}
+
+/* =============================================
+   SETTINGS PAGE MOBILE FIXES
+   ============================================= */
+
+@media (max-width: 767px) {
+  /* Settings tabs - horizontal scroll */
+  .settings-tabs-list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .settings-tabs-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Integration cards - stack buttons */
+  .integration-card-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .integration-card-actions > * {
+    min-height: 36px;
+  }
+}
+
+/* =============================================
+   CHAT INTERFACE MOBILE FIXES
+   ============================================= */
+
+@media (max-width: 767px) {
+  /* Chat messages - reduce max width */
+  .chat-message-content {
+    max-width: 90%;
+  }
+  
+  /* Chat input area - stack on very small screens */
+  .chat-input-area {
+    gap: 8px;
+  }
+  
+  /* Quick actions - ensure scrollable */
+  .chat-quick-actions {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin-bottom: -8px;
+    scrollbar-width: none;
+  }
+  
+  .chat-quick-actions::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* =============================================
+   IMPROVED TOUCH STATES
+   ============================================= */
+
+/* Better tap highlighting (no global sizing side effects) */
+@media (pointer: coarse) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .tap-highlight:active {
+    background-color: var(--accent);
+  }
+}
+
+/* =============================================
+   PWA STANDALONE MODE FIXES
+   ============================================= */
+
+@media (display-mode: standalone) {
+  /* Keep this minimal; avoid `body { position: fixed }` which can break app-router layouts */
+  html, body {
+    overscroll-behavior: none;
+  }
+}
+
+/* =============================================
+   TRUNCATION AND TEXT OVERFLOW UTILITIES
+   ============================================= */
+
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Force text to break words if necessary */
+.break-anywhere {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
