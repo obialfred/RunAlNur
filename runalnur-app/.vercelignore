@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+
+# Build outputs (Vercel builds fresh)
+.next
+out
+dist
+
+# Native app builds
+ios
+android
+src-tauri/target
+
+# Development
+*.log
+.DS_Store
+.env*.local
+
+# IDE
+.idea
+.vscode
+
+# Test/audit files
+audit-runs
+*.ndjson

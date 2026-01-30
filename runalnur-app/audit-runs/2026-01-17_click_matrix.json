@@ -1,0 +1,1154 @@
+{
+  "meta": {
+    "date": "2026-01-17",
+    "scope": "UI click-through audit (every visible button/link/control per page state)",
+    "evidenceStandard": {
+      "pageSnapshot": "Cursor browser snapshot log filename",
+      "network": "browser_network_requests filtered to xhr/fetch where applicable",
+      "console": "browser_console_messages after interactions"
+    }
+  },
+  "entries": [
+    {
+      "kind": "other",
+      "meta": {
+        "date": "2026-01-17",
+        "note": "Append-only audit event log. Each line is a JSON object (NDJSON). Evidence references are browser snapshot log filenames plus network/console captures."
+      }
+    },
+    {
+      "kind": "other",
+      "type": "note",
+      "ts": "2026-01-17T00:00:00Z",
+      "message": "Switched audit output to structured files under runalnur-app/audit-runs to avoid markdown save conflicts. DO NOT rely on PRODUCTION_AUDIT_POST_OPUS_2026-01-17.md for latest run."
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T20:56:20Z",
+      "url": "/sops",
+      "controlsFound": [],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/process-street/workflows",
+          "status": 400
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T20:57:10Z",
+      "url": "/settings",
+      "controlsFound": [
+        "SETUP WIZARD (link/button)",
+        "Integrations/Profile tabs",
+        "CONNECT buttons",
+        "TEST buttons",
+        "SET ENV VARS"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/clickup?action=status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/hubspot/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/process-street/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/guru/status",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": "Full click-through of each CONNECT/TEST/SET ENV VARS will be logged as separate interaction events."
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T20:59:20Z",
+      "page": "/settings",
+      "control": "CONNECT (first integration card)",
+      "action": "click",
+      "result": "Opened modal dialog 'Connect Supabase' with API key input + Cancel + TEST & CONNECT + View documentation link.",
+      "evidence": {
+        "snapshotSummary": "dialog: Connect Supabase",
+        "network": "no new xhr observed on open"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T20:59:28Z",
+      "page": "/settings",
+      "control": "TEST (second integration row)",
+      "action": "click",
+      "result": "Triggered network request to /api/clickup/status returning 404; no visible state change captured in a11y snapshot.",
+      "evidence": {
+        "network": [
+          {
+            "method": "GET",
+            "url": "/api/clickup/status",
+            "status": 404
+          }
+        ]
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:00:05Z",
+      "page": "/settings",
+      "control": "SET ENV VARS (integration #2)",
+      "action": "click",
+      "result": "No navigation and no additional xhr/fetch observed; a11y snapshot unchanged (likely informational/toast-only UI not exposed in snapshot).",
+      "evidence": {
+        "network": "no new xhr",
+        "snapshotSummary": "no change"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:01:10Z",
+      "page": "/settings",
+      "control": "TEST (integration #3)",
+      "action": "click",
+      "result": "Triggered GET /api/process-street/status (200) (twice). Console continues to emit 'Supabase client credentials not configured'.",
+      "evidence": {
+        "network": [
+          {
+            "method": "GET",
+            "url": "/api/process-street/status",
+            "status": 200
+          }
+        ],
+        "consoleNote": "Supabase client credentials not configured"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:01:45Z",
+      "page": "/settings",
+      "control": "CONNECT (integration #3)",
+      "action": "click",
+      "result": "Opened modal dialog 'Connect Process Street' with API key input + Cancel + TEST & CONNECT + View documentation link.",
+      "evidence": {
+        "snapshotSummary": "dialog: Connect Process Street",
+        "network": "no new xhr observed on open"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:02:35Z",
+      "page": "/settings",
+      "control": "TEST (integration #4)",
+      "action": "click",
+      "result": "Triggered GET /api/hubspot/status (200) (twice).",
+      "evidence": {
+        "network": [
+          {
+            "method": "GET",
+            "url": "/api/hubspot/status",
+            "status": 200
+          }
+        ]
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:02:42Z",
+      "page": "/settings",
+      "control": "CONNECT (integration #4)",
+      "action": "click",
+      "result": "Opened modal dialog 'Connect HubSpot' with API key input + Cancel + TEST & CONNECT + View documentation link.",
+      "evidence": {
+        "snapshotSummary": "dialog: Connect HubSpot",
+        "network": "no new xhr observed on open"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:03:55Z",
+      "page": "/settings",
+      "control": "TEST (integration #5)",
+      "action": "click",
+      "result": "Triggered GET /api/guru/status (200) (twice).",
+      "evidence": {
+        "network": [
+          {
+            "method": "GET",
+            "url": "/api/guru/status",
+            "status": 200
+          }
+        ]
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:04:02Z",
+      "page": "/settings",
+      "control": "CONNECT (integration #5)",
+      "action": "click",
+      "result": "Opened modal dialog 'Connect Guru' with API key input + Cancel + TEST & CONNECT + View documentation link.",
+      "evidence": {
+        "snapshotSummary": "dialog: Connect Guru",
+        "network": "no new xhr observed on open"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:04:35Z",
+      "page": "/settings",
+      "control": "CONNECT (integration #6)",
+      "action": "click",
+      "result": "Opened modal dialog 'Connect OpenAI / Claude' with API key input + Cancel + TEST & CONNECT + View documentation link.",
+      "evidence": {
+        "snapshotSummary": "dialog: Connect OpenAI / Claude",
+        "network": "no new xhr observed on open"
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:05:25Z",
+      "url": "/onboarding",
+      "controlsFound": [
+        "Step buttons 1-4",
+        "GET STARTED"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/clickup?action=status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/process-street/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/hubspot/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/guru/status",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:05:35Z",
+      "page": "/settings",
+      "control": "TEST (integration #6 / AI)",
+      "action": "n/a",
+      "result": "Not present on this integration card (CONNECT only).",
+      "evidence": {}
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:06:05Z",
+      "page": "/onboarding",
+      "control": "GET STARTED",
+      "action": "click",
+      "result": "No navigation and no additional xhr/fetch observed; a11y snapshot changed slightly (step 1 button lost accessible name in snapshot output).",
+      "evidence": {
+        "network": "no new xhr",
+        "snapshotSummary": "step 1 button present but unlabeled"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:06:55Z",
+      "page": "/onboarding",
+      "control": "Step buttons 1-4",
+      "action": "click each",
+      "result": "No navigation and no additional xhr/fetch observed across step clicks; a11y snapshot remained essentially unchanged (no step content exposed in snapshot).",
+      "evidence": {
+        "network": "no new xhr",
+        "snapshotSummary": "still only step buttons + GET STARTED"
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:07:30Z",
+      "url": "/status",
+      "controlsFound": [
+        "Global nav links",
+        "Topbar: Open menu/Search/NEW",
+        "Bottom nav links"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/status",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": "Main content not exposed in snapshot (main region empty)."
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:08:05Z",
+      "url": "/knowledge",
+      "controlsFound": [
+        "Global nav links",
+        "Topbar: Open menu/Search/NEW",
+        "Bottom nav links"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/guru/cards",
+          "status": 400
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": "Main content not exposed in snapshot (main region empty)."
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:12:00Z",
+      "url": "/ai",
+      "controlsFound": [
+        "Suggested prompt buttons (4)",
+        "SUMMARIZE",
+        "CREATE TASK",
+        "STATUS",
+        "Command input",
+        "Submit (icon-only)",
+        "Topbar: Open menu/Search/NEW",
+        "Bottom nav links"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:12:40Z",
+      "page": "/ai",
+      "control": "Suggested prompts (4) + SUMMARIZE/CREATE TASK/STATUS",
+      "action": "click all",
+      "result": "No navigation and no additional xhr/fetch observed from these clicks in this run; UI state changes not observable in a11y snapshot.",
+      "evidence": {
+        "network": "no new xhr",
+        "snapshotSummary": "no material change"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:14:10Z",
+      "page": "/ai",
+      "control": "Command input + submit",
+      "action": "type 'status' then submit",
+      "result": "Triggered POST /api/ai/chat → 500. Also attempted to load Rive asset /rive/ai-thinking.riv → 404 (and fetched Rive wasm from unpkg). Console: 'Problem loading file; may be corrupt!'",
+      "evidence": {
+        "network": [
+          {
+            "method": "POST",
+            "url": "/api/ai/chat",
+            "status": 500
+          },
+          {
+            "method": "GET",
+            "url": "/rive/ai-thinking.riv",
+            "status": 404
+          },
+          {
+            "method": "GET",
+            "url": "https://unpkg.com/@rive-app/canvas@2.34.1/rive.wasm",
+            "status": 200
+          }
+        ],
+        "consoleNote": [
+          "Problem loading file; may be corrupt!",
+          "Bad header"
+        ]
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:15:10Z",
+      "url": "/activity",
+      "controlsFound": [
+        "Global nav links",
+        "Topbar: Open menu/Search/NEW",
+        "Bottom nav links"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/activities",
+          "status": 503
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": "Main content not exposed in snapshot (main region empty)."
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:15:55Z",
+      "url": "/reports",
+      "controlsFound": [
+        "EXPORT PDF",
+        "EXPORT JSON",
+        "Global nav links",
+        "Topbar: Open menu/Search/NEW",
+        "Bottom nav links"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/projects",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/contacts",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/activities?limit=50",
+          "status": 503
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:16:40Z",
+      "page": "/reports",
+      "control": "EXPORT PDF",
+      "action": "click",
+      "result": "No new xhr/fetch observed in network log; no visible change in a11y snapshot. (May trigger file download not captured here.)",
+      "evidence": {
+        "network": "no new xhr",
+        "snapshotSummary": "no change"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:16:50Z",
+      "page": "/reports",
+      "control": "EXPORT JSON",
+      "action": "click",
+      "result": "No new xhr/fetch observed in network log; no visible change in a11y snapshot. (May trigger file download not captured here.)",
+      "evidence": {
+        "network": "no new xhr",
+        "snapshotSummary": "no change"
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:17:10Z",
+      "url": "/projects",
+      "controlsFound": [],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "file": "snapshot-2026-01-17T21-14-26-171Z.log"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/projects",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:17:55Z",
+      "page": "/projects",
+      "control": "NEW PROJECT",
+      "action": "click",
+      "result": "Opened New Project dialog with fields Name/Description/Arm/Status/Priority/Due Date and Cancel/Save. Console warns missing dialog description/aria-describedby.",
+      "evidence": {
+        "snapshotSummary": "dialog with form fields + Cancel/Save",
+        "consoleNote": "Missing Description or aria-describedby for DialogContent"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:18:45Z",
+      "page": "/projects",
+      "control": "New Project: Save",
+      "action": "click after typing name/description",
+      "result": "POST /api/projects → 400. UI shows alert with message 'Name and arm_id are required' and includes DEBUG receivedKeys/received (name came through as empty string). Attempt to programmatically select Arm option failed in automation ('Option with value \"Janna\" not found').",
+      "evidence": {
+        "network": [
+          {
+            "method": "POST",
+            "url": "/api/projects",
+            "status": 400
+          }
+        ],
+        "uiAlert": "Name and arm_id are required (debug shows name empty)",
+        "consoleNote": "Option with value 'Janna' not found"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:19:25Z",
+      "page": "/projects",
+      "control": "Row 1 EDIT/DELETE",
+      "action": "click",
+      "result": "Row 1 EDIT opens populated modal successfully. Subsequent attempts to close/click DELETE caused UI instability: page title became blank in snapshot; console shows 'React.Children.only expected to receive a single React element child' and 'Element not found'.",
+      "evidence": {
+        "consoleNote": [
+          "React.Children.only expected to receive a single React element child",
+          "Element not found"
+        ],
+        "snapshotSummary": "page collapsed to generic root"
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:19:55Z",
+      "url": "/projects/1",
+      "controlsFound": [
+        "← PROJECTS back link",
+        "Arm link (Janna)",
+        "EDIT",
+        "TASK",
+        "Tabs: Task Board/Notes",
+        "Topbar controls",
+        "Bottom nav"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/projects/1",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/tasks?project_id=1",
+          "status": 200
+        }
+      ],
+      "console": [],
+      "note": null
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:21:30Z",
+      "page": "/projects/1",
+      "control": "TASK (New Task) modal + Save",
+      "action": "open modal, type name, click Save",
+      "result": "POST /api/tasks → 400. UI alert: 'project_id and name are required' with DEBUG showing receivedKeys includes project_id/name and received.project_id='1' but name received empty string.",
+      "evidence": {
+        "network": [
+          {
+            "method": "POST",
+            "url": "/api/tasks",
+            "status": 400
+          }
+        ],
+        "uiAlert": "project_id and name are required (debug shows name empty)",
+        "snapshotSummary": "New Task dialog with alert"
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:22:10Z",
+      "url": "/contacts",
+      "controlsFound": [],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "file": "snapshot-2026-01-17T21-19-48-447Z.log"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/contacts",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:22:45Z",
+      "page": "/contacts",
+      "control": "SYNC HUBSPOT",
+      "action": "click",
+      "result": "Triggered GET /api/hubspot/contacts?sync=1 → 400.",
+      "evidence": {
+        "network": [
+          {
+            "method": "GET",
+            "url": "/api/hubspot/contacts?sync=1",
+            "status": 400
+          }
+        ]
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:23:00Z",
+      "page": "/contacts",
+      "control": "NEW CONTACT",
+      "action": "click",
+      "result": "Opened New Contact dialog with Name/Email/Phone/Company/Role/Arm/Tags and Cancel/Save. Console warns missing dialog description/aria-describedby.",
+      "evidence": {
+        "snapshotSummary": "dialog with contact fields + Cancel/Save",
+        "consoleNote": "Missing Description or aria-describedby for DialogContent"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:24:35Z",
+      "page": "/contacts",
+      "control": "New Contact: Save",
+      "action": "type name/email/tags then Save",
+      "result": "POST /api/contacts → 400. UI alert: 'Name and arm_id are required' with DEBUG showing receivedKeys includes name/arm_id but received.name empty string.",
+      "evidence": {
+        "network": [
+          {
+            "method": "POST",
+            "url": "/api/contacts",
+            "status": 400
+          }
+        ],
+        "uiAlert": "Name and arm_id are required (debug shows name empty)",
+        "snapshotSummary": "New Contact dialog with alert"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:25:10Z",
+      "page": "/contacts",
+      "control": "New Contact modal: Cancel/Close/Escape",
+      "action": "attempt to dismiss modal",
+      "result": "Modal did not dismiss via Cancel, Close (X), or Escape after Save error state (still present in a11y snapshot).",
+      "evidence": {
+        "snapshotSummary": "dialog remains visible after dismissal attempts"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:26:05Z",
+      "page": "/contacts",
+      "control": "Row 1 EDIT/DELETE",
+      "action": "click",
+      "result": "Row 1 EDIT opens populated modal successfully. Subsequent attempts to interact (DELETE click while modal present) caused UI instability: page title became blank in snapshot (root generic only).",
+      "evidence": {
+        "snapshotSummary": "page collapsed to generic root after row action"
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:27:05Z",
+      "url": "/arms/janna/properties",
+      "controlsFound": [
+        "NEW PROPERTY",
+        "Sidebar arm links",
+        "Topbar Open menu/Search/NEW"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/properties?arm_id=janna",
+          "status": 503
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:28:10Z",
+      "page": "/arms/janna/properties",
+      "control": "NEW PROPERTY",
+      "action": "click",
+      "result": "Opened New Property dialog (Name/Address/Unit/Sqft/Purchase Price/Renovation Budget/Target Rent + Cancel/Save). Console warns missing dialog description/aria-describedby.",
+      "evidence": {
+        "snapshotSummary": "dialog with property fields + Cancel/Save",
+        "consoleNote": "Missing Description or aria-describedby for DialogContent"
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:30:15Z",
+      "page": "/arms/janna/properties",
+      "control": "New Property: Save",
+      "action": "type name/address then Save",
+      "result": "POST /api/properties → 503; subsequent GET /api/properties?arm_id=janna also 503.",
+      "evidence": {
+        "network": [
+          {
+            "method": "POST",
+            "url": "/api/properties",
+            "status": 503
+          },
+          {
+            "method": "GET",
+            "url": "/api/properties?arm_id=janna",
+            "status": 503
+          }
+        ]
+      }
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:30:40Z",
+      "page": "/arms/janna/properties",
+      "control": "New Property modal: Cancel/Close/Escape",
+      "action": "attempt to dismiss modal",
+      "result": "Modal did not dismiss via Cancel after Save error state (still present in a11y snapshot).",
+      "evidence": {
+        "snapshotSummary": "dialog remains visible after dismissal attempt"
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:31:10Z",
+      "url": "/arms/janna/deals",
+      "controlsFound": [
+        "SYNC HUBSPOT",
+        "NEW DEAL",
+        "Sidebar arm links",
+        "Topbar Open menu/Search/NEW"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/deals?arm_id=janna",
+          "status": 503
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:32:45Z",
+      "url": "/arms/janna",
+      "controlsFound": [
+        "Arm header NEW dropdown/button",
+        "Tabs: Projects/Contacts/Activity",
+        "Projects table rows (links)",
+        "Topbar Open menu/Search/NEW",
+        "Bottom nav"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/projects?arm_id=janna",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/contacts?arm_id=janna",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/activities?arm_id=janna",
+          "status": 503
+        },
+        {
+          "method": "GET",
+          "url": "/api/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:34:10Z",
+      "page": "/arms/janna",
+      "control": "Header NEW dropdown + tabs",
+      "action": "click NEW, click Contacts tab, click Activity tab",
+      "result": "No visible dropdown menu captured in a11y snapshot after NEW click. Tab clicks did not trigger additional xhr/fetch in this run; tabpanels not exposing content in snapshot.",
+      "evidence": {
+        "network": "no new xhr",
+        "snapshotSummary": "tabpanels largely empty in snapshot"
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:35:05Z",
+      "url": "/arms/nova",
+      "controlsFound": [
+        "Arm header NEW button",
+        "Tabs: Projects/Contacts/Activity",
+        "Projects table rows (links)",
+        "Topbar Open menu/Search/NEW",
+        "Bottom nav"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/projects?arm_id=nova",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/contacts?arm_id=nova",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/activities?arm_id=nova",
+          "status": 503
+        },
+        {
+          "method": "GET",
+          "url": "/api/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:35:35Z",
+      "url": "/arms/silk",
+      "controlsFound": [
+        "Arm header NEW button",
+        "Tabs: Projects/Contacts/Activity",
+        "Projects table rows (links)",
+        "Topbar Open menu/Search/NEW",
+        "Bottom nav"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [
+        {
+          "method": "GET",
+          "url": "/api/projects?arm_id=silk",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/contacts?arm_id=silk",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/activities?arm_id=silk",
+          "status": 503
+        },
+        {
+          "method": "GET",
+          "url": "/api/tasks",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "url": "/api/notifications",
+          "status": 200
+        }
+      ],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:36:20Z",
+      "url": "/login",
+      "controlsFound": [
+        "Email input",
+        "Password input",
+        "ENTER",
+        "Forgot password link",
+        "Create account link"
+      ],
+      "snapshot": {
+        "tool": "browser_snapshot",
+        "note": "Captured in-session (not exported)"
+      },
+      "network": [],
+      "console": [
+        "Supabase credentials not found",
+        "Supabase client credentials not configured"
+      ],
+      "note": null
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:32:52.185Z",
+      "url": "/signup",
+      "controlsFound": [
+        "Full Name input",
+        "Email input",
+        "Password input",
+        "Confirm Password input",
+        "CREATE ACCOUNT button",
+        "Sign in link"
+      ],
+      "snapshot": null,
+      "network": [],
+      "console": [
+        "Supabase credentials not found"
+      ],
+      "note": "Page loads. Form submission does nothing (no API call) when Supabase not configured - silent failure."
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:32:52.185Z",
+      "page": "/signup",
+      "control": "CREATE ACCOUNT button",
+      "action": "click (with filled form)",
+      "result": "no-op",
+      "evidence": {
+        "network": [],
+        "console": [
+          "Supabase credentials not found"
+        ]
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:32:52.185Z",
+      "url": "/forgot-password",
+      "controlsFound": [
+        "Back to login link",
+        "Email input",
+        "SEND RESET LINK button"
+      ],
+      "snapshot": null,
+      "network": [],
+      "console": [
+        "Supabase credentials not found"
+      ],
+      "note": "Page loads. Form submission does nothing (no API call) when Supabase not configured - silent failure."
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:32:52.185Z",
+      "page": "/forgot-password",
+      "control": "SEND RESET LINK button",
+      "action": "click (with filled email)",
+      "result": "no-op",
+      "evidence": {
+        "network": [],
+        "console": []
+      }
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:32:52.185Z",
+      "url": "/reset-password",
+      "controlsFound": [],
+      "snapshot": null,
+      "network": [],
+      "console": [],
+      "note": "Page loads but renders mostly empty - expected as it requires a token from email link."
+    },
+    {
+      "kind": "page",
+      "ts": "2026-01-17T21:32:52.185Z",
+      "url": "/login",
+      "controlsFound": [
+        "Email input",
+        "Password input",
+        "ENTER button",
+        "Forgot password? link",
+        "Create account link"
+      ],
+      "snapshot": null,
+      "network": [],
+      "console": [
+        "Supabase credentials not found"
+      ],
+      "note": "Page loads. Form submission does nothing (no API call) when Supabase not configured - silent failure."
+    },
+    {
+      "kind": "interaction",
+      "ts": "2026-01-17T21:32:52.185Z",
+      "page": "/login",
+      "control": "ENTER button",
+      "action": "click (with filled credentials)",
+      "result": "no-op",
+      "evidence": {
+        "network": [],
+        "console": [
+          "Supabase client credentials not configured"
+        ]
+      }
+    }
+  ]
+}

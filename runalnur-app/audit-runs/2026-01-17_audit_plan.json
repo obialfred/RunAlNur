@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "date": "2026-01-17",
+    "app": "RunAlNur",
+    "intent": "End-to-end audit: every page, every button; route-by-route API security.",
+    "output": {
+      "runLogNdjson": "runalnur-app/audit-runs/2026-01-17_audit_run.ndjson",
+      "clickMatrixJson": "runalnur-app/audit-runs/2026-01-17_click_matrix.json",
+      "apiMatrixJson": "runalnur-app/audit-runs/2026-01-17_api_matrix.json"
+    }
+  },
+  "method": {
+    "ui": {
+      "evidence": [
+        "browser_snapshot",
+        "browser_network_requests",
+        "browser_console_messages"
+      ],
+      "rules": [
+        "For each route, inventory all visible interactive elements (links/buttons/inputs/menus/modals).",
+        "Click each control once; if it opens new UI (modal/menu/tab), audit the newly visible controls too.",
+        "Record resulting navigation, network requests (xhr/fetch), and console errors/warnings."
+      ]
+    },
+    "api": {
+      "evidence": [
+        "code review of app/api/*",
+        "runtime network traces from UI"
+      ],
+      "rules": [
+        "Classify each route by authn/authz mechanism and tenant scoping.",
+        "Flag public routes and validate webhook verification where applicable.",
+        "Record any routes returning unexpected status codes (e.g., 400/404) during UI flows."
+      ]
+    }
+  },
+  "remainingRouteQueue": [
+    "/",
+    "/projects",
+    "/projects/[id]",
+    "/contacts",
+    "/activity",
+    "/reports",
+    "/ai",
+    "/knowledge",
+    "/sops",
+    "/status",
+    "/settings",
+    "/onboarding",
+    "/arms/janna/*"
+  ],
+  "notes": [
+    "Do not write audit output into markdown during this run to avoid editor save conflicts.",
+    "Environment appears in demo-mode / missing Supabase credentials; treat related console errors as audit findings."
+  ],
+  "summary": {
+    "completedAt": "2026-01-17T21:33:14.388Z",
+    "totalPagesAudited": 22,
+    "totalInteractionsTested": 34,
+    "productionBlockers": [
+      {
+        "id": "pb-1",
+        "severity": "critical",
+        "area": "API",
+        "description": "GET /api/activities returns 503 - backend not implemented or DB not connected",
+        "affectedPages": [
+          "/",
+          "/activity",
+          "/reports",
+          "/arms/janna",
+          "/arms/nova",
+          "/arms/silk"
+        ]
+      },
+      {
+        "id": "pb-2",
+        "severity": "critical",
+        "area": "API",
+        "description": "POST /api/ai/chat returns 500 - AI endpoint failing",
+        "affectedPages": [
+          "/ai"
+        ]
+      },
+      {
+        "id": "pb-3",
+        "severity": "critical",
+        "area": "API",
+        "description": "GET /api/properties?arm_id=janna and GET /api/deals?arm_id=janna return 503",
+        "affectedPages": [
+          "/arms/janna/properties",
+          "/arms/janna/deals"
+        ]
+      },
+      {
+        "id": "pb-4",
+        "severity": "high",
+        "area": "UI",
+        "description": "Form submissions (Project/Task/Contact modals) silently fail with 400 errors - empty name fields sent despite user input",
+        "affectedPages": [
+          "/projects",
+          "/projects/[id]",
+          "/contacts"
+        ]
+      },
+      {
+        "id": "pb-5",
+        "severity": "high",
+        "area": "UI",
+        "description": "UI instability - clicking EDIT/DELETE on project rows causes React errors and blank titles",
+        "affectedPages": [
+          "/projects"
+        ]
+      },
+      {
+        "id": "pb-6",
+        "severity": "high",
+        "area": "Auth",
+        "description": "All auth forms (signup/login/forgot-password) fail silently without Supabase - no user feedback",
+        "affectedPages": [
+          "/signup",
+          "/login",
+          "/forgot-password",
+          "/reset-password"
+        ]
+      },
+      {
+        "id": "pb-7",
+        "severity": "medium",
+        "area": "API",
+        "description": "Several integration status endpoints return 400/404 - /api/process-street/workflows, /api/clickup/status, /api/guru/cards",
+        "affectedPages": [
+          "/sops",
+          "/settings",
+          "/knowledge"
+        ]
+      },
+      {
+        "id": "pb-8",
+        "severity": "medium",
+        "area": "UI",
+        "description": "HubSpot sync buttons trigger 400 errors - /api/hubspot/contacts?sync=1, /api/hubspot/deals?sync=1",
+        "affectedPages": [
+          "/contacts",
+          "/arms/janna/deals"
+        ]
+      },
+      {
+        "id": "pb-9",
+        "severity": "low",
+        "area": "Asset",
+        "description": "Missing Rive animation asset - GET /rive/ai-thinking.riv returns 404",
+        "affectedPages": [
+          "/ai"
+        ]
+      }
+    ],
+    "pagesWithNoIssues": [
+      "/status",
+      "/onboarding"
+    ],
+    "pagesWithPartialFunctionality": [
+      "/settings (test connections work for some integrations)",
+      "/reports (load ok but activities 503)",
+      "/ (command center loads but metrics may show stale data)"
+    ],
+    "auditConclusion": "Application is NOT production-ready. Critical API failures (503s) on activity/properties/deals endpoints, form submission bugs causing 400 errors, and silent auth failures block production use. All 503 errors indicate missing DB connection or unimplemented backend logic. Form bugs suggest React controlled-input issues where state is not capturing user input. Recommend: 1) Fix Supabase connection first, 2) Fix form state management, 3) Implement demo-mode fallbacks for all failing endpoints."
+  }
+}

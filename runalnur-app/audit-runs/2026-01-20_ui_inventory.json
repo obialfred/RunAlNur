@@ -1,0 +1,2016 @@
+{
+  "generatedAt": "2026-01-20T20:44:43.271Z",
+  "root": "/Users/obi/Projects/RunAlNur/RunAlNur/runalnur-app",
+  "files": [
+    {
+      "file": "app/ai/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 26,
+            "text": "            href=\"/coo\""
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/arms/[arm]/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 101,
+            "text": "            <DropdownMenuItem onClick={() => setProjectModalOpen(true)}>"
+          },
+          {
+            "line": 105,
+            "text": "            <DropdownMenuItem onClick={() => setContactModalOpen(true)}>"
+          },
+          {
+            "line": 382,
+            "text": "                                onClick={() => setSelectedListId(list.id)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 84,
+            "text": "              href=\"/\""
+          },
+          {
+            "line": 197,
+            "text": "                            href={`/projects/${project.id}`}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/arms/janna/deals/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 59,
+            "text": "            onClick={handleSync}"
+          },
+          {
+            "line": 64,
+            "text": "          <Button size=\"sm\" className=\"gap-1.5 text-xs\" onClick={handleCreate} disabled={creating}>"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 20,
+            "text": "    await fetch(\"/api/deals\", {"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/arms/janna/properties/[id]/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 96,
+            "text": "            onClick={() => setNewPhaseOpen(true)}"
+          },
+          {
+            "line": 185,
+            "text": "                onClick={() => setNewPhaseOpen(false)}"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 40,
+            "text": "      const response = await fetch(`/api/properties/${resolvedParams.id}/phases`, {"
+          }
+        ],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 85,
+            "text": "        <Link href=\"/arms/janna/properties\" className=\"text-xs text-muted-foreground\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/arms/janna/properties/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 33,
+            "text": "          onClick={() => {"
+          },
+          {
+            "line": 56,
+            "text": "              onClick={() => {"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/calendar/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 153,
+            "text": "          <Button onClick={handleNewBlock} className=\"w-full gap-2\">"
+          },
+          {
+            "line": 220,
+            "text": "          <Button size=\"sm\" onClick={handleNewBlock}>"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/capital/by-asset/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 98,
+            "text": "              <Link href={`/capital/by-asset/${assetClass.id}`}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/capital/by-entity/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 52,
+            "text": "              <Link href=\"/capital/entities\" className=\"text-sm text-primary mt-2 inline-block\">"
+          },
+          {
+            "line": 66,
+            "text": "              <Link href={`/capital/entities/${entity.id}`}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/capital/entities/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 148,
+            "text": "            onClick={() => setExpanded(!expanded)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/capital/ownership/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 86,
+            "text": "                      <Link href={`/capital/entities`}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/capital/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 112,
+            "text": "          href=\"/capital/treasury\""
+          },
+          {
+            "line": 118,
+            "text": "          href=\"/capital/portfolio\""
+          },
+          {
+            "line": 124,
+            "text": "          href=\"/capital/by-asset\""
+          },
+          {
+            "line": 130,
+            "text": "          href=\"/capital/investments\""
+          },
+          {
+            "line": 146,
+            "text": "              href=\"/capital/calls\""
+          },
+          {
+            "line": 175,
+            "text": "              href=\"/capital/investments\""
+          },
+          {
+            "line": 205,
+            "text": "            href=\"/capital/portfolio\""
+          },
+          {
+            "line": 242,
+            "text": "      <Link href={href}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/contacts/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 91,
+            "text": "          <Button size=\"sm\" className=\"gap-1.5 text-xs flex-1 sm:flex-none\" onClick={handleCreate}>"
+          },
+          {
+            "line": 238,
+            "text": "                              onClick={() => handleEdit(contact)}"
+          },
+          {
+            "line": 246,
+            "text": "                              onClick={() => handleDeleteClick(contact.id)}"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 72,
+            "text": "    await fetch(`/api/contacts/${deletingId}`, { method: \"DELETE\" });"
+          }
+        ],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 205,
+            "text": "                            href={`/arms/${arm?.slug}`}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/coo/eod/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 39,
+            "text": "            onClick={refresh}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 31,
+            "text": "            <Link href=\"/coo\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/coo/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 132,
+            "text": "          onClick={handleGenerate}"
+          },
+          {
+            "line": 153,
+            "text": "            onClick={accept}"
+          },
+          {
+            "line": 164,
+            "text": "          onClick={requestCheckin}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 179,
+            "text": "          <Link href=\"/coo/eod\">"
+          },
+          {
+            "line": 191,
+            "text": "          <Link href=\"/coo/settings\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/coo/settings/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 94,
+            "text": "            onClick={refresh}"
+          },
+          {
+            "line": 103,
+            "text": "            onClick={onSave}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 85,
+            "text": "            <Link href=\"/coo\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/decisions/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 139,
+            "text": "          onClick={() => onChange(option.value)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/forgot-password/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 61,
+            "text": "              <Link href=\"/login\">"
+          },
+          {
+            "line": 83,
+            "text": "            href=\"/login\""
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/inbox/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 67,
+            "text": "          onClick={() => setFilter(\"pending\")}"
+          },
+          {
+            "line": 83,
+            "text": "          onClick={() => setFilter(\"all\")}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/influence/calendar/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 99,
+            "text": "              <Button variant=\"ghost\" size=\"sm\" onClick={goToPrevMonth}>"
+          },
+          {
+            "line": 105,
+            "text": "              <Button variant=\"ghost\" size=\"sm\" onClick={goToNextMonth}>"
+          },
+          {
+            "line": 109,
+            "text": "            <Button variant=\"outline\" size=\"sm\" onClick={goToToday}>"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/influence/contacts/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 184,
+            "text": "            onClick={() => setFocusedArmId(null)}"
+          },
+          {
+            "line": 200,
+            "text": "                onClick={() => setFocusedArmId(arm.id)}"
+          },
+          {
+            "line": 223,
+            "text": "          <Button variant=\"outline\" size=\"sm\" onClick={expandAll}>"
+          },
+          {
+            "line": 226,
+            "text": "          <Button variant=\"outline\" size=\"sm\" onClick={collapseAll}>"
+          },
+          {
+            "line": 230,
+            "text": "            <Button variant=\"ghost\" size=\"sm\" onClick={() => setFocusedArmId(null)}>"
+          },
+          {
+            "line": 303,
+            "text": "            onClick={() => setDetailOpen(false)}"
+          },
+          {
+            "line": 319,
+            "text": "              onClick={(e) => e.stopPropagation()}"
+          },
+          {
+            "line": 344,
+            "text": "                  <Button variant=\"outline\" size=\"sm\" onClick={() => setDetailOpen(false)}>"
+          },
+          {
+            "line": 439,
+            "text": "                    onClick={() => setLogOpen(true)}"
+          },
+          {
+            "line": 531,
+            "text": "        onClick={onToggleCollapsed}"
+          },
+          {
+            "line": 555,
+            "text": "        <button onClick={onToggleCollapsed} className=\"flex items-center gap-2\">"
+          },
+          {
+            "line": 564,
+            "text": "        <Button variant=\"outline\" size=\"sm\" onClick={onFocus}>"
+          },
+          {
+            "line": 606,
+            "text": "      onClick={onOpen}"
+          },
+          {
+            "line": 649,
+            "text": "          onClick={(e) => {"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 173,
+            "text": "          <a href=\"/contacts\">"
+          },
+          {
+            "line": 265,
+            "text": "              <a href=\"/contacts\">"
+          },
+          {
+            "line": 353,
+            "text": "                      href={`mailto:${selectedContact.email}`}"
+          },
+          {
+            "line": 366,
+            "text": "                      href={`tel:${selectedContact.phone}`}"
+          },
+          {
+            "line": 379,
+            "text": "                      href={`https://wa.me/${normalizePhoneForWhatsApp(selectedContact.phone)}`}"
+          },
+          {
+            "line": 394,
+            "text": "                      href={instagramUrl(selectedContact.socials?.instagram) as string}"
+          },
+          {
+            "line": 409,
+            "text": "                      href={normalizeUrlMaybe(selectedContact.socials?.linkedin) as string}"
+          },
+          {
+            "line": 424,
+            "text": "                      href={normalizeUrlMaybe(selectedContact.socials?.website) as string}"
+          },
+          {
+            "line": 484,
+            "text": "                    <a href={`/contacts?search=${encodeURIComponent(selectedContact.name)}`}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/influence/inner/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 122,
+            "text": "            <Link href={`/influence/contacts/${person.id}`}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/influence/intel/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 68,
+            "text": "          onClick={() => setFilter(\"all\")}"
+          },
+          {
+            "line": 79,
+            "text": "          onClick={() => setFilter(\"unread\")}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 191,
+            "text": "                  href={item.sourceUrl}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/influence/media/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 143,
+            "text": "                  <Link href={mention.url} target=\"_blank\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/influence/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 62,
+            "text": "            href=\"/influence/contacts\""
+          },
+          {
+            "line": 124,
+            "text": "          href=\"/influence/week\""
+          },
+          {
+            "line": 131,
+            "text": "          href=\"/influence/intel\""
+          },
+          {
+            "line": 137,
+            "text": "          href=\"/influence/graph\""
+          },
+          {
+            "line": 153,
+            "text": "              href=\"/influence/week\""
+          },
+          {
+            "line": 184,
+            "text": "              href=\"/influence/calendar\""
+          },
+          {
+            "line": 216,
+            "text": "            href=\"/influence/intel\""
+          },
+          {
+            "line": 295,
+            "text": "      <Link href={href}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/influence/strategic/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 123,
+            "text": "            <Link href={`/influence/contacts/${person.id}`}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/knowledge/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 57,
+            "text": "            onClick={() => refresh()}"
+          },
+          {
+            "line": 67,
+            "text": "            onClick={() => window.open(\"https://app.getguru.com\", \"_blank\")}"
+          },
+          {
+            "line": 88,
+            "text": "            onClick={() => (window.location.href = \"/settings\")}"
+          },
+          {
+            "line": 118,
+            "text": "                  onClick={() => setSelectedCollection(null)}"
+          },
+          {
+            "line": 131,
+            "text": "                    onClick={() => setSelectedCollection(collection.id)}"
+          },
+          {
+            "line": 168,
+            "text": "                    onClick={() => setSelectedCard(card)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/layout.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 108,
+            "text": "        <link rel=\"apple-touch-icon\" href=\"/icons/apple-touch-icon.png\" />"
+          },
+          {
+            "line": 109,
+            "text": "        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/icons/apple-touch-icon-180x180.png\" />"
+          },
+          {
+            "line": 110,
+            "text": "        <link rel=\"apple-touch-icon\" sizes=\"167x167\" href=\"/icons/apple-touch-icon-167x167.png\" />"
+          },
+          {
+            "line": 111,
+            "text": "        <link rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"/icons/apple-touch-icon-152x152.png\" />"
+          },
+          {
+            "line": 112,
+            "text": "        <link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"/icons/apple-touch-icon-120x120.png\" />"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/login/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [
+          {
+            "line": 56,
+            "text": "        const res = await fetch(\"/api/auth/session\", {"
+          }
+        ],
+        "routerPush": [
+          {
+            "line": 76,
+            "text": "    router.push(redirectTo);"
+          }
+        ],
+        "href": [
+          {
+            "line": 131,
+            "text": "              href=\"/forgot-password\""
+          },
+          {
+            "line": 137,
+            "text": "              href=\"/signup\""
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/onboarding/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 259,
+            "text": "              onClick={() => { completeStep(0); setCurrentStep(1); }}"
+          },
+          {
+            "line": 297,
+            "text": "                onClick={() => setCurrentStep(0)}"
+          },
+          {
+            "line": 303,
+            "text": "                onClick={handleProfileSave}"
+          },
+          {
+            "line": 343,
+            "text": "                onClick={() => setCurrentStep(1)}"
+          },
+          {
+            "line": 349,
+            "text": "                onClick={handleDatabaseCheck}"
+          },
+          {
+            "line": 411,
+            "text": "                              onClick={() => setConnectingIntegration(integration)}"
+          },
+          {
+            "line": 440,
+            "text": "                onClick={() => setCurrentStep(2)}"
+          },
+          {
+            "line": 446,
+            "text": "                onClick={handleFinish}"
+          },
+          {
+            "line": 469,
+            "text": "                  onClick={() => step.completed && setCurrentStep(index)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [
+          {
+            "line": 227,
+            "text": "    router.push(\"/\");"
+          }
+        ],
+        "href": [
+          {
+            "line": 418,
+            "text": "                            href={integration.docsUrl}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 123,
+            "text": "              onClick={() => setShowSetupBanner(false)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 116,
+            "text": "            <Link href=\"/onboarding\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/principles/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 180,
+            "text": "        onClick={onToggle}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/projects/[id]/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 85,
+            "text": "              onClick={() => setProjectModalOpen(true)}"
+          },
+          {
+            "line": 92,
+            "text": "              onClick={() => {"
+          },
+          {
+            "line": 308,
+            "text": "                onClick={() => onTaskClick?.(task)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 53,
+            "text": "            href=\"/projects\""
+          },
+          {
+            "line": 60,
+            "text": "            href={`/arms/${arm?.slug}`}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/projects/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 134,
+            "text": "        <Button size=\"sm\" className=\"gap-1.5 text-xs w-full sm:w-auto\" onClick={handleCreate}>"
+          },
+          {
+            "line": 304,
+            "text": "                              onClick={() => handleEdit(project)}"
+          },
+          {
+            "line": 312,
+            "text": "                              onClick={() => handleDeleteClick(project.id)}"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 76,
+            "text": "    await fetch(`/api/projects/${deletingId}`, { method: \"DELETE\" });"
+          }
+        ],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 229,
+            "text": "                            href={`/projects/${project.id}`}"
+          },
+          {
+            "line": 244,
+            "text": "                            href={`/arms/${arm?.slug}`}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/reports/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 54,
+            "text": "          <Button variant=\"outline\" size=\"sm\" className=\"text-[10px] h-7 px-2\" onClick={() => window.print()}>"
+          },
+          {
+            "line": 57,
+            "text": "          <Button size=\"sm\" className=\"text-[10px] h-7 px-2\" onClick={handleExportJson}>"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/reset-password/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [
+          {
+            "line": 63,
+            "text": "      router.push(\"/\");"
+          }
+        ],
+        "href": [
+          {
+            "line": 92,
+            "text": "              <Link href=\"/forgot-password\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/settings/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 581,
+            "text": "                          onClick={() => setConnectingIntegration(integration)}"
+          },
+          {
+            "line": 595,
+            "text": "                        onClick={() => testConnection(integration.id)}"
+          },
+          {
+            "line": 615,
+            "text": "                        onClick={() => handleDisconnect(integration.id)}"
+          },
+          {
+            "line": 672,
+            "text": "                    onClick={previewClickUpSetup}"
+          },
+          {
+            "line": 760,
+            "text": "                        onClick={executeClickUpSetup}"
+          },
+          {
+            "line": 880,
+            "text": "                                  onClick={() => void clearArmMapping(arm.id)}"
+          },
+          {
+            "line": 960,
+            "text": "                      onClick={handleSaveProfile}"
+          },
+          {
+            "line": 1038,
+            "text": "                          onClick={() => setShowGuide(true)}"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 168,
+            "text": "      const response = await fetch(`/api/integrations/${provider}/test`, {"
+          },
+          {
+            "line": 211,
+            "text": "      const response = await fetch(`/api/integrations/${provider}`, {"
+          },
+          {
+            "line": 248,
+            "text": "      const response = await fetch(`/api/integrations/${provider}`, {"
+          },
+          {
+            "line": 392,
+            "text": "      const res = await fetch('/api/clickup/setup');"
+          },
+          {
+            "line": 413,
+            "text": "      const res = await fetch('/api/clickup/setup', { method: 'POST' });"
+          },
+          {
+            "line": 450,
+            "text": "    await fetch(\"/api/clickup/mappings\", {"
+          },
+          {
+            "line": 463,
+            "text": "    await fetch(`/api/clickup/mappings?arm_id=${encodeURIComponent(armId)}`, {"
+          }
+        ],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 480,
+            "text": "          <Link href=\"/onboarding\" className=\"w-full sm:w-auto\">"
+          },
+          {
+            "line": 623,
+            "text": "                      href={integration.docsUrl}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/signup/page.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [
+          {
+            "line": 79,
+            "text": "        await fetch(\"/api/auth/session\", {"
+          },
+          {
+            "line": 93,
+            "text": "      await fetch(\"/api/auth/setup-profile\", {"
+          }
+        ],
+        "routerPush": [
+          {
+            "line": 99,
+            "text": "      router.push(\"/\");"
+          }
+        ],
+        "href": [
+          {
+            "line": 125,
+            "text": "              <Link href=\"/login\">"
+          },
+          {
+            "line": 219,
+            "text": "              <Link href=\"/login\" className=\"text-foreground hover:underline\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "app/sops/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 50,
+            "text": "          onClick={() => setNewSopDialogOpen(true)}"
+          },
+          {
+            "line": 137,
+            "text": "                onClick={() => setNewSopDialogOpen(false)}"
+          },
+          {
+            "line": 143,
+            "text": "                onClick={() => {"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "app/timeline/page.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 90,
+            "text": "            onClick={() => setActiveHorizon(horizon.id)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/ai/ActionConfirmation.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 192,
+            "text": "          onClick={() => setIsExpanded(!isExpanded)}"
+          },
+          {
+            "line": 229,
+            "text": "          onClick={onApprove}"
+          },
+          {
+            "line": 239,
+            "text": "          onClick={onReject}"
+          },
+          {
+            "line": 294,
+            "text": "              onClick={onApproveAll}"
+          },
+          {
+            "line": 303,
+            "text": "              onClick={onRejectAll}"
+          },
+          {
+            "line": 370,
+            "text": "          onClick={onApprove}"
+          },
+          {
+            "line": 377,
+            "text": "          onClick={onReject}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/ai/ChatInterface.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 474,
+            "text": "                onClick={() => handleSuggestion(prompt)}"
+          },
+          {
+            "line": 494,
+            "text": "              onClick={() => handleQuickAction(action.action)}"
+          },
+          {
+            "line": 538,
+            "text": "                    onClick={() => handleFileRemove(attachment.id)}"
+          },
+          {
+            "line": 554,
+            "text": "            onClick={() => fileInputRef.current?.click()}"
+          },
+          {
+            "line": 579,
+            "text": "                onClick={() => setSelectedProvider(selectedProvider === \"anthropic\" ? \"gemini\" : \"anthropic\")}"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 207,
+            "text": "      const response = await fetch(\"/api/ai/chat\", {"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/ai/FileDropZone.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 147,
+            "text": "        onClick={handleClick}"
+          },
+          {
+            "line": 258,
+            "text": "                    onClick={(e) => {"
+          },
+          {
+            "line": 318,
+            "text": "        onClick={() => fileInputRef.current?.click()}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/calendar/BlockEditor.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 137,
+            "text": "            onClick={onClose}"
+          },
+          {
+            "line": 154,
+            "text": "                onClick={onClose}"
+          },
+          {
+            "line": 184,
+            "text": "                      onClick={() => setContext(cfg.id)}"
+          },
+          {
+            "line": 208,
+            "text": "                      onClick={() => setContext(cfg.id)}"
+          },
+          {
+            "line": 279,
+            "text": "                    onClick={() => setIsRecurring(false)}"
+          },
+          {
+            "line": 290,
+            "text": "                    onClick={() => {"
+          },
+          {
+            "line": 304,
+            "text": "                    onClick={() => {"
+          },
+          {
+            "line": 349,
+            "text": "                <Button onClick={handleSave} disabled={!title.trim()} className=\"flex-1 gap-2\">"
+          },
+          {
+            "line": 356,
+            "text": "                    onClick={handleDelete}"
+          },
+          {
+            "line": 427,
+            "text": "            onClick={() => setContext(cfg.id)}"
+          },
+          {
+            "line": 438,
+            "text": "        <Button size=\"sm\" onClick={handleSave} disabled={!title.trim()} className=\"h-7 text-xs flex-1\">"
+          },
+          {
+            "line": 441,
+            "text": "        <Button size=\"sm\" variant=\"ghost\" onClick={onCancel} className=\"h-7 text-xs\">"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/calendar/WeekView.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 121,
+            "text": "            onClick={goToToday}"
+          },
+          {
+            "line": 132,
+            "text": "            onClick={goToPrevWeek}"
+          },
+          {
+            "line": 140,
+            "text": "            onClick={goToNextWeek}"
+          },
+          {
+            "line": 215,
+            "text": "                    onClick={() => handleSlotClick(date, hour)}"
+          },
+          {
+            "line": 262,
+            "text": "                        onClick={(e) => handleBlockClick(block, e)}"
+          },
+          {
+            "line": 364,
+            "text": "          onClick={() =>"
+          },
+          {
+            "line": 378,
+            "text": "          onClick={() =>"
+          },
+          {
+            "line": 413,
+            "text": "              onClick={() => onDateSelect(date)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/contacts/HubSpotSync.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 58,
+            "text": "        onClick={handleSync}"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 26,
+            "text": "      const response = await fetch(`/api/hubspot/contacts?${params.toString()}`);"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/coo/PriorityBar.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 62,
+            "text": "                onClick={async () => {"
+          },
+          {
+            "line": 80,
+            "text": "                onClick={async () => {"
+          },
+          {
+            "line": 99,
+            "text": "                onClick={async () => {"
+          },
+          {
+            "line": 121,
+            "text": "                onClick={async () => {"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/coo/PriorityCard.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 93,
+            "text": "                onClick={onStart}"
+          },
+          {
+            "line": 106,
+            "text": "                  onClick={onPause}"
+          },
+          {
+            "line": 114,
+            "text": "                  onClick={onComplete}"
+          },
+          {
+            "line": 127,
+            "text": "                onClick={onDefer}"
+          },
+          {
+            "line": 138,
+            "text": "            onClick={() => setExpanded(!expanded)}"
+          },
+          {
+            "line": 188,
+            "text": "      onClick={onClick}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/dashboard/ArmCard.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 44,
+            "text": "    <Link href={`/arms/${arm.slug}`}>"
+          }
+        ]
+      }
+    },
+    {
+      "file": "components/dashboard/ProjectsOverview.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 31,
+            "text": "        <Link href=\"/projects\" className=\"text-xs text-muted-foreground hover:text-foreground transition-colors\">"
+          },
+          {
+            "line": 89,
+            "text": "        <Link href={`/projects/${project.id}`} className=\"font-medium hover:underline\">"
+          }
+        ]
+      }
+    },
+    {
+      "file": "components/gamification/QuestList.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 137,
+            "text": "            onClick={handleComplete}"
+          },
+          {
+            "line": 251,
+            "text": "              onClick={() => setIsExpanded(!isExpanded)}"
+          },
+          {
+            "line": 327,
+            "text": "            onClick={() => setFilter(f.key)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/influence/InteractionLogger.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 154,
+            "text": "                    onClick={() => setType(t.id)}"
+          },
+          {
+            "line": 177,
+            "text": "                  onClick={() => setSentiment(s.id)}"
+          },
+          {
+            "line": 245,
+            "text": "            <Button variant=\"outline\" onClick={() => onOpenChange(false)}>"
+          },
+          {
+            "line": 248,
+            "text": "            <Button onClick={handleSave} disabled={saving}>"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 84,
+            "text": "      const res = await fetch(\"/api/interactions\", {"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/influence/MeetingBrief.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 231,
+            "text": "                onClick={(e) => {"
+          },
+          {
+            "line": 328,
+            "text": "        onClick={onToggle}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 203,
+            "text": "                    href={news.url}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "components/influence/RelationshipHealth.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 42,
+            "text": "      <Link href=\"/influence\">"
+          },
+          {
+            "line": 91,
+            "text": "          href=\"/influence/contacts\""
+          },
+          {
+            "line": 140,
+            "text": "              href=\"/influence/week\""
+          }
+        ]
+      }
+    },
+    {
+      "file": "components/janna/PropertyModal.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 124,
+            "text": "            <Button type=\"button\" variant=\"outline\" onClick={() => onOpenChange(false)}>"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 56,
+            "text": "    await fetch(url, {"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/knowledge/CardDetail.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 103,
+            "text": "                onClick={onClose}"
+          },
+          {
+            "line": 183,
+            "text": "                onClick={() => {"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/knowledge/KnowledgeCard.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 33,
+            "text": "      onClick={onClick}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/layout/LayoutShell.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 52,
+            "text": "              onClick={() => void applyUpdate()}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/layout/MobileNav.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 59,
+            "text": "              href={item.href}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "components/layout/ModeSwitcher.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 131,
+            "text": "                  onClick={() => handleModeSelect(modeConfig.id)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [
+          {
+            "line": 41,
+            "text": "        router.push(modeConfig.route);"
+          }
+        ],
+        "href": []
+      }
+    },
+    {
+      "file": "components/layout/Sidebar.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 464,
+            "text": "        onClick={() => setIsExpanded(prev => !prev)}"
+          },
+          {
+            "line": 506,
+            "text": "              onClick={onNavigate}"
+          },
+          {
+            "line": 551,
+            "text": "        onClick={onNavigate}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 166,
+            "text": "          href=\"/onboarding\""
+          },
+          {
+            "line": 172,
+            "text": "          href=\"/settings\""
+          },
+          {
+            "line": 505,
+            "text": "              href={item.href}"
+          },
+          {
+            "line": 550,
+            "text": "        href={href}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "components/layout/TopBar.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 92,
+            "text": "            onClick={onMenuClick}"
+          },
+          {
+            "line": 110,
+            "text": "              onClick={() => {"
+          },
+          {
+            "line": 123,
+            "text": "            onClick={() => {"
+          },
+          {
+            "line": 182,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={() => setProjectModalOpen(true)}>"
+          },
+          {
+            "line": 186,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={handleNewTask}>"
+          },
+          {
+            "line": 190,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={() => setContactModalOpen(true)}>"
+          },
+          {
+            "line": 195,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={() => router.push(\"/sops\")}>"
+          },
+          {
+            "line": 227,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={() => router.push(\"/settings?tab=profile\")}>"
+          },
+          {
+            "line": 231,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={() => router.push(\"/settings\")}>"
+          },
+          {
+            "line": 235,
+            "text": "              <DropdownMenuItem className=\"text-xs text-muted-foreground\" onClick={handleSignOut}>"
+          },
+          {
+            "line": 273,
+            "text": "                  onClick={() => handleSelectProjectForTask(project.id)}"
+          },
+          {
+            "line": 284,
+            "text": "            <Button onClick={() => { setProjectPickerOpen(false); setProjectModalOpen(true); }}>"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [
+          {
+            "line": 53,
+            "text": "    router.push(\"/login\");"
+          },
+          {
+            "line": 62,
+            "text": "      router.push(\"/projects\");"
+          },
+          {
+            "line": 195,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={() => router.push(\"/sops\")}>"
+          },
+          {
+            "line": 227,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={() => router.push(\"/settings?tab=profile\")}>"
+          },
+          {
+            "line": 231,
+            "text": "              <DropdownMenuItem className=\"text-xs gap-2\" onClick={() => router.push(\"/settings\")}>"
+          }
+        ],
+        "href": []
+      }
+    },
+    {
+      "file": "components/modals/ContactModal.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 241,
+            "text": "            <Button type=\"button\" variant=\"outline\" onClick={() => onOpenChange(false)}>"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 86,
+            "text": "      const res = await fetch(url, {"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/modals/DeleteConfirmDialog.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 41,
+            "text": "            onClick={onConfirm}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/modals/ProjectModal.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 193,
+            "text": "            <Button type=\"button\" variant=\"outline\" onClick={() => onOpenChange(false)}>"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 72,
+            "text": "      const res = await fetch(url, {"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/modals/TaskModal.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 188,
+            "text": "                onClick={() => setDeleteDialogOpen(true)}"
+          },
+          {
+            "line": 197,
+            "text": "              <Button type=\"button\" variant=\"outline\" onClick={() => onOpenChange(false)}>"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 73,
+            "text": "      const res = await fetch(url, {"
+          },
+          {
+            "line": 100,
+            "text": "    await fetch(`/api/tasks/${task.id}`, { method: \"DELETE\" });"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/notifications/CrossModeNotificationPanel.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 142,
+            "text": "                          onClick={() => handleAlertClick(alert)}"
+          },
+          {
+            "line": 194,
+            "text": "      onClick={onClick}"
+          },
+          {
+            "line": 231,
+            "text": "          onClick={onDismiss}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [
+          {
+            "line": 46,
+            "text": "    router.push(url);"
+          }
+        ],
+        "href": []
+      }
+    },
+    {
+      "file": "components/notifications/NotificationPanel.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 170,
+            "text": "                          onClick={() => handleRead(n.id)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/pwa/InstallPrompt.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 62,
+            "text": "                  onClick={dismiss}"
+          },
+          {
+            "line": 71,
+            "text": "                  onClick={handleInstall}"
+          },
+          {
+            "line": 80,
+            "text": "                  onClick={dismiss}"
+          },
+          {
+            "line": 101,
+            "text": "              onClick={() => {"
+          },
+          {
+            "line": 118,
+            "text": "                  onClick={() => {"
+          },
+          {
+            "line": 180,
+            "text": "                onClick={() => {"
+          },
+          {
+            "line": 222,
+            "text": "        onClick={handleClick}"
+          },
+          {
+            "line": 239,
+            "text": "              onClick={() => setShowIOSInstructions(false)}"
+          },
+          {
+            "line": 257,
+            "text": "                onClick={() => setShowIOSInstructions(false)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/search/CommandPalette.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 189,
+            "text": "                          onClick={() => handleSelect(cmd.href)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [
+          {
+            "line": 67,
+            "text": "    router.push(href);"
+          }
+        ],
+        "href": []
+      }
+    },
+    {
+      "file": "components/settings/ClickUpConnect.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 43,
+            "text": "        onClick={handleConnect}"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 17,
+            "text": "      const response = await fetch(\"/api/clickup/oauth/start\");"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/settings/IntegrationConnectModal.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 126,
+            "text": "                  onClick={() => setShowKey(!showKey)}"
+          },
+          {
+            "line": 170,
+            "text": "          <Button variant=\"outline\" onClick={handleClose}>"
+          },
+          {
+            "line": 173,
+            "text": "          <Button onClick={handleConnect} disabled={!apiKey.trim() || testing}>"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 100,
+            "text": "              href={integration.docsUrl}"
+          }
+        ]
+      }
+    },
+    {
+      "file": "components/settings/ThemeToggle.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 91,
+            "text": "                onClick={() => setTheme(option.value)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/sops/ChecklistView.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 28,
+            "text": "              onClick={() => onToggle(step.id, \"Completed\")}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/sops/SOPRunner.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 36,
+            "text": "      <Button size=\"sm\" className=\"text-xs\" onClick={startRun}>"
+          }
+        ],
+        "fetch": [
+          {
+            "line": 18,
+            "text": "    const response = await fetch(\"/api/process-street/runs\", {"
+          }
+        ],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/sync/SyncStatusIndicator.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 81,
+            "text": "          onClick={() => {"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/ui/pagination.tsx",
+      "actions": {
+        "onClick": [
+          {
+            "line": 66,
+            "text": "          onClick={() => onPageChange(currentPage - 1)}"
+          },
+          {
+            "line": 83,
+            "text": "              onClick={() => onPageChange(page)}"
+          },
+          {
+            "line": 94,
+            "text": "          onClick={() => onPageChange(currentPage + 1)}"
+          }
+        ],
+        "fetch": [],
+        "routerPush": [],
+        "href": []
+      }
+    },
+    {
+      "file": "components/widgets/CapitalSnapshot.tsx",
+      "actions": {
+        "onClick": [],
+        "fetch": [],
+        "routerPush": [],
+        "href": [
+          {
+            "line": 31,
+            "text": "      <Link href=\"/capital\">"
+          },
+          {
+            "line": 84,
+            "text": "          href=\"/capital\""
+          },
+          {
+            "line": 131,
+            "text": "              href=\"/capital/calls\""
+          }
+        ]
+      }
+    }
+  ]
+}

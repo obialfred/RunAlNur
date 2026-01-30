@@ -1,0 +1,1707 @@
+{
+  "generatedAt": "2026-01-20T20:44:43.254Z",
+  "root": "/Users/obi/Projects/RunAlNur/RunAlNur/runalnur-app",
+  "middleware": {
+    "publicApiRoutes": [
+      "/api/health",
+      "/api/status",
+      "/api/auth/session",
+      "/api/clickup/webhook",
+      "/api/process-street/webhook",
+      "/api/webhooks/incoming",
+      "/api/clickup/oauth"
+    ],
+    "publicRoutes": [
+      "/login",
+      "/signup",
+      "/forgot-password",
+      "/reset-password",
+      "/auth/callback",
+      "/onboarding",
+      "/",
+      "/capital",
+      "/influence",
+      "/decisions",
+      "/principles",
+      "/timeline",
+      "/inbox",
+      "/settings",
+      "/contacts",
+      "/projects",
+      "/sops",
+      "/knowledge",
+      "/ai",
+      "/activity",
+      "/status",
+      "/reports",
+      "/arms",
+      "/coo",
+      "/calendar",
+      "/quests"
+    ],
+    "devApiBypassPresent": true,
+    "file": "middleware.ts"
+  },
+  "routes": [
+    {
+      "route": "/api/activities",
+      "file": "app/api/activities/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "arm_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/ai/chat",
+      "file": "app/api/ai/chat/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "ai",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/approvals",
+      "file": "app/api/approvals/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/auth/session",
+      "file": "app/api/auth/session/route.ts",
+      "methods": [
+        "POST",
+        "DELETE",
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/auth/setup-profile",
+      "file": "app/api/auth/setup-profile/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/calendar/callback",
+      "file": "app/api/calendar/callback/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "calendar",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/calendar/connect",
+      "file": "app/api/calendar/connect/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "calendar",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/clickup",
+      "file": "app/api/clickup/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "clickup",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/clickup/mappings",
+      "file": "app/api/clickup/mappings/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id",
+          "arm_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "clickup",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/clickup/oauth",
+      "file": "app/api/clickup/oauth/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "clickup",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/clickup/oauth/start",
+      "file": "app/api/clickup/oauth/start/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "clickup",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/clickup/setup",
+      "file": "app/api/clickup/setup/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "clickup",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/clickup/status",
+      "file": "app/api/clickup/status/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "clickup",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/clickup/webhook",
+      "file": "app/api/clickup/webhook/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "owner_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "clickup",
+        "isWebhook": true,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": [
+          {
+            "line": 3,
+            "text": "import { verifyClickUpWebhook, webhookUnauthorizedResponse } from \"@/lib/api/webhooks\";"
+          }
+        ]
+      }
+    },
+    {
+      "route": "/api/contacts",
+      "file": "app/api/contacts/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "arm_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/contacts/[id]",
+      "file": "app/api/contacts/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/coo/briefing",
+      "file": "app/api/coo/briefing/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/coo/checkin",
+      "file": "app/api/coo/checkin/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/coo/preferences",
+      "file": "app/api/coo/preferences/route.ts",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/coo/priorities",
+      "file": "app/api/coo/priorities/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/coo/sessions",
+      "file": "app/api/coo/sessions/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/coo/sessions/[id]",
+      "file": "app/api/coo/sessions/[id]/route.ts",
+      "methods": [
+        "PATCH"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/cron/briefings",
+      "file": "app/api/cron/briefings/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "cron",
+        "isWebhook": false,
+        "isCron": true
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/deals",
+      "file": "app/api/deals/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "arm_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/deals/[id]",
+      "file": "app/api/deals/[id]/route.ts",
+      "methods": [
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/followups",
+      "file": "app/api/followups/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/guru/cards",
+      "file": "app/api/guru/cards/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "guru",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/guru/collections",
+      "file": "app/api/guru/collections/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "guru",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/guru/status",
+      "file": "app/api/guru/status/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "guru",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/health",
+      "file": "app/api/health/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/hubspot/companies",
+      "file": "app/api/hubspot/companies/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "hubspot",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/hubspot/contacts",
+      "file": "app/api/hubspot/contacts/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "hubspot",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/hubspot/deals",
+      "file": "app/api/hubspot/deals/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "hubspot",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/hubspot/status",
+      "file": "app/api/hubspot/status/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "hubspot",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/integrations/[provider]",
+      "file": "app/api/integrations/[provider]/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/integrations/[provider]/test",
+      "file": "app/api/integrations/[provider]/test/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/interactions",
+      "file": "app/api/interactions/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/notifications",
+      "file": "app/api/notifications/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "notifications",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/notifications/cross-mode",
+      "file": "app/api/notifications/cross-mode/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "notifications",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/notifications/register",
+      "file": "app/api/notifications/register/route.ts",
+      "methods": [
+        "POST",
+        "DELETE"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "notifications",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/notifications/test",
+      "file": "app/api/notifications/test/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "notifications",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/process-street/runs",
+      "file": "app/api/process-street/runs/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "process-street",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/process-street/status",
+      "file": "app/api/process-street/status/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "process-street",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/process-street/tasks",
+      "file": "app/api/process-street/tasks/route.ts",
+      "methods": [
+        "GET",
+        "PATCH"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "process-street",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/process-street/webhook",
+      "file": "app/api/process-street/webhook/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "process-street",
+        "isWebhook": true,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": [
+          {
+            "line": 3,
+            "text": "import { verifyProcessStreetWebhook, webhookUnauthorizedResponse } from \"@/lib/api/webhooks\";"
+          }
+        ]
+      }
+    },
+    {
+      "route": "/api/process-street/workflows",
+      "file": "app/api/process-street/workflows/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "process-street",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/profile",
+      "file": "app/api/profile/route.ts",
+      "methods": [
+        "GET",
+        "PUT"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/projects",
+      "file": "app/api/projects/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "arm_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/projects/[id]",
+      "file": "app/api/projects/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/properties",
+      "file": "app/api/properties/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "arm_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/properties/[id]",
+      "file": "app/api/properties/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/properties/[id]/phases",
+      "file": "app/api/properties/[id]/phases/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/scribe/import",
+      "file": "app/api/scribe/import/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/status",
+      "file": "app/api/status/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/storage/upload-url",
+      "file": "app/api/storage/upload-url/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/tasks",
+      "file": "app/api/tasks/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": [
+          "user_id",
+          "arm_id"
+        ]
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/tasks/[id]",
+      "file": "app/api/tasks/[id]/route.ts",
+      "methods": [
+        "GET",
+        "PATCH",
+        "DELETE"
+      ],
+      "auth": {
+        "usesAuthHelpers": true,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": true,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": true
+      },
+      "classification": {
+        "provider": null,
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": []
+      }
+    },
+    {
+      "route": "/api/webhooks/incoming",
+      "file": "app/api/webhooks/incoming/route.ts",
+      "methods": [
+        "POST"
+      ],
+      "auth": {
+        "usesAuthHelpers": false,
+        "middlewarePublic": false,
+        "devApiBypassPresent": true
+      },
+      "dataAccess": {
+        "usesSupabaseAdmin": false,
+        "scopingSignals": []
+      },
+      "behavior": {
+        "usesDemoFallbacks": false
+      },
+      "classification": {
+        "provider": "webhooks",
+        "isWebhook": false,
+        "isCron": false
+      },
+      "notes": {
+        "webhookVerificationHints": [
+          {
+            "line": 2,
+            "text": "import { verifyIncomingWebhook, webhookUnauthorizedResponse } from \"@/lib/api/webhooks\";"
+          }
+        ]
+      }
+    }
+  ]
+}

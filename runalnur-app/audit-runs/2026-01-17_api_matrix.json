@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "date": "2026-01-17",
+    "scope": "API route audit (auth classification, authz/tenant issues, verification, severity)",
+    "classification": [
+      "AUTH_IN_ROUTE",
+      "MIDDLEWARE_ONLY",
+      "PUBLIC+VERIFIED",
+      "PUBLIC_UNVERIFIED"
+    ]
+  },
+  "routes": [
+    {
+      "route": "/api/activities",
+      "file": "app/api/activities/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/ai/chat",
+      "file": "app/api/ai/chat/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/approvals",
+      "file": "app/api/approvals/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/auth/setup-profile",
+      "file": "app/api/auth/setup-profile/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()",
+        "Uses Supabase client helpers",
+        "Mentions service role"
+      ]
+    },
+    {
+      "route": "/api/clickup",
+      "file": "app/api/clickup/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/clickup/mappings",
+      "file": "app/api/clickup/mappings/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/clickup/oauth",
+      "file": "app/api/clickup/oauth/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/clickup/webhook",
+      "file": "app/api/clickup/webhook/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "high",
+      "notes": []
+    },
+    {
+      "route": "/api/contacts",
+      "file": "app/api/contacts/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/contacts/:id",
+      "file": "app/api/contacts/[id]/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/cron/briefings",
+      "file": "app/api/cron/briefings/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/deals",
+      "file": "app/api/deals/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/deals/:id",
+      "file": "app/api/deals/[id]/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "high",
+      "notes": []
+    },
+    {
+      "route": "/api/guru/cards",
+      "file": "app/api/guru/cards/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/guru/status",
+      "file": "app/api/guru/status/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/health",
+      "file": "app/api/health/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/hubspot/companies",
+      "file": "app/api/hubspot/companies/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/hubspot/contacts",
+      "file": "app/api/hubspot/contacts/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/hubspot/deals",
+      "file": "app/api/hubspot/deals/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/hubspot/status",
+      "file": "app/api/hubspot/status/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/notifications",
+      "file": "app/api/notifications/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()",
+        "Mentions service role"
+      ]
+    },
+    {
+      "route": "/api/notifications/register",
+      "file": "app/api/notifications/register/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "high",
+      "notes": []
+    },
+    {
+      "route": "/api/process-street/runs",
+      "file": "app/api/process-street/runs/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/process-street/status",
+      "file": "app/api/process-street/status/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/process-street/tasks",
+      "file": "app/api/process-street/tasks/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/process-street/webhook",
+      "file": "app/api/process-street/webhook/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "high",
+      "notes": []
+    },
+    {
+      "route": "/api/process-street/workflows",
+      "file": "app/api/process-street/workflows/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/profile",
+      "file": "app/api/profile/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/projects",
+      "file": "app/api/projects/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/projects/:id",
+      "file": "app/api/projects/[id]/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/properties",
+      "file": "app/api/properties/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/properties/:id",
+      "file": "app/api/properties/[id]/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "high",
+      "notes": []
+    },
+    {
+      "route": "/api/properties/:id/phases",
+      "file": "app/api/properties/[id]/phases/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/scribe/import",
+      "file": "app/api/scribe/import/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/status",
+      "file": "app/api/status/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "low",
+      "notes": []
+    },
+    {
+      "route": "/api/storage/upload-url",
+      "file": "app/api/storage/upload-url/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/tasks",
+      "file": "app/api/tasks/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/tasks/:id",
+      "file": "app/api/tasks/[id]/route.ts",
+      "classification": "AUTH_IN_ROUTE",
+      "severity": "low",
+      "notes": [
+        "Calls getAuthenticatedUser()"
+      ]
+    },
+    {
+      "route": "/api/webhooks/incoming",
+      "file": "app/api/webhooks/incoming/route.ts",
+      "classification": "PUBLIC_UNVERIFIED",
+      "severity": "high",
+      "notes": []
+    }
+  ]
+}
